@@ -1,4 +1,4 @@
-module MyTikTok
+module github.com/ConnorPoor/MyTikTok
 
 go 1.20
 
