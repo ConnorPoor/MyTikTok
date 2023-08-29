@@ -14,7 +14,7 @@ var (
 	port     string = "3306"
 	dbName   string = "MyTikTok"
 
-	db *gorm.DB
+	Db *gorm.DB
 )
 
 func InitMysql() {
