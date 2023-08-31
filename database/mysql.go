@@ -25,14 +25,15 @@ func InitMysql() {
 		port,
 		dbName,
 	)
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	var err error
+	Db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
-	db.AutoMigrate(&model.User{})
-	db.AutoMigrate(&model.Favorite{})
-	db.AutoMigrate(&model.Following{})
-	db.AutoMigrate(&model.Followers{})
-	db.AutoMigrate(&model.Comment{})
-	db.AutoMigrate(&model.Video{})
+	Db.AutoMigrate(&model.User{})
+	Db.AutoMigrate(&model.Favorite{})
+	Db.AutoMigrate(&model.Following{})
+	Db.AutoMigrate(&model.Followers{})
+	Db.AutoMigrate(&model.Comment{})
+	Db.AutoMigrate(&model.Video{})
 }
